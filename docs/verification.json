@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-11-16T12:36:24.936542+00:00",
+  "sourceCommit": "e7b34480f4a479e85a72f1e4878291d1e67b09f9",
+  "ci": {
+    "url": "https://github.com/cristoferdiazalvarez/nexora/actions/runs/43867473883",
+    "conclusion": "success",
+    "unitAndIntegrationTests": 20,
+    "e2eFlows": 2,
+    "runtime": "Node 24, MongoDB, Chromium, Ubuntu standard GitHub runner"
+  },
+  "publicDemo": {
+    "url": null,
+    "productionTestsRun": false,
+    "blocker": "Vercel, Render y MongoDB Atlas sin conexión disponible en la última comprobación"
+  },
+  "portfolio": {
+    "checkedAt": "2026-11-16T12:24:43.361Z",
+    "readOnly": true,
+    "results": [
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "status": 200,
+        "h1": 1,
+        "noHorizontalOverflow": true
+      },
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "h1": 1,
+        "noHorizontalOverflow": true
+      },
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app/en",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "status": 200,
+        "h1": 1,
+        "noHorizontalOverflow": true
+      },
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app/en",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "h1": 1,
+        "noHorizontalOverflow": true
+      }
+    ],
+    "javascriptErrors": []
+  },
+  "paidResourcesCreated": false,
+  "billingActivated": false
+}

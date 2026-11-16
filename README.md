@@ -4,7 +4,7 @@
 
 Aplicación Full Stack de gestión empresarial con organizaciones independientes, clientes, catálogo y facturación. Proyecto de portfolio orientado a demostrar flujos completos, seguridad en backend y pruebas reproducibles.
 
-**Estado:** código preparado para Vercel + Render + MongoDB Atlas. La demo pública todavía no está desplegada ni verificada. No hay ninguna URL de producción inventada. [Estado y resultados](STATUS.md) · [Despliegue](docs/DEPLOYMENT.md) · [Seguridad](docs/SECURITY.md).
+**Estado:** código publicado y [CI remota aprobada](https://github.com/cristoferdiazalvarez/nexora/actions/runs/43867473883) con 20 pruebas de unidad/integración y dos flujos E2E. Preparado para Vercel + Render + MongoDB Atlas. La demo pública todavía no está desplegada ni verificada. No hay ninguna URL de producción inventada. [Estado y resultados](STATUS.md) · [Despliegue](docs/DEPLOYMENT.md) · [Seguridad](docs/SECURITY.md).
 
 ![Dashboard de NEXORA con datos ficticios, capturado del build local](docs/screenshots/dashboard-light.png)
 
