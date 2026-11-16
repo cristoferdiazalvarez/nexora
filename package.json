@@ -1,0 +1,41 @@
+{
+  "name": "nexora",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
+    "build": "npm run build --workspaces",
+    "lint": "eslint . && tsc --noEmit && npm run typecheck --workspaces",
+    "test": "vitest run",
+    "seed": "npm run seed -w apps/api",
+    "format": "prettier --write apps .github *.json *.ts *.mjs *.md *.yaml",
+    "test:e2e": "playwright test",
+    "security:scan": "tsx scripts/security-scan.ts",
+    "screenshots": "tsx scripts/screenshots.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@eslint/js": "^9.39.0",
+    "@playwright/test": "^1.65.1",
+    "@types/supertest": "^6.0.3",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.39.0",
+    "mongodb-memory-server": "^10.2.0",
+    "prettier": "^3.10.1",
+    "supertest": "^7.1.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "^4.0.0"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.1"
+    }
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

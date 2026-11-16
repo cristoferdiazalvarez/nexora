@@ -1,0 +1,22 @@
+{
+  "source": "Capturas reales del build local con datos ficticios del seed, no capturas de un despliegue remoto.",
+  "generatedAt": "2026-11-16T12:20:55.132Z",
+  "assets": [
+    {
+      "file": "docs/screenshots/dashboard-light.png",
+      "sha256": "6b6ff3c9af95324057c4c9d9db16e2f5f32b9316ce2667040b21bf194e1d3cbc"
+    },
+    {
+      "file": "docs/screenshots/dashboard-dark.png",
+      "sha256": "d4cc31a236e77897c9a51e39c58f9dfd8b168aaede2b1c6bc5351b1dd685f679"
+    },
+    {
+      "file": "docs/screenshots/invoices-desktop.png",
+      "sha256": "843dd011db608b7299387fc2ddd7ac4282ce04684db413283510401a8f5c453e"
+    },
+    {
+      "file": "docs/screenshots/invoices-mobile.png",
+      "sha256": "98a8afb2b667fcee0493074bff8e62648b808ccaf2f92ca5ec116970124b401e"
+    }
+  ]
+}
