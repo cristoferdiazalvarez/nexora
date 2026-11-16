@@ -1235,7 +1235,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/*" element={<Shell />} />
         </Routes>
       </BrowserRouter>
-      <Toaster richColors position="top-right" />
+      <Toaster richColors expand position="top-right" />
     </QueryClientProvider>
   </React.StrictMode>,
 );

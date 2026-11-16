@@ -26,6 +26,12 @@ describe("Frontera de producción", () => {
       API_PROXY_SECRET: secret,
     };
     expect(() => validateEnvironment(env)).not.toThrow();
+    expect(() =>
+      validateEnvironment({
+        ...env,
+        MONGODB_URI: "mongodb+srv://demo:NEVER-LOG@[invalid/nexora_production",
+      }),
+    ).toThrow("MONGODB_URI no válida");
     for (const patch of [
       { APP_ORIGIN: "http://localhost:5173" },
       { APP_ORIGIN: origin + "/" },

@@ -63,6 +63,37 @@ const proxy = () =>
     createProxy({ upstream: upstreamUrl, secret, origin, production: false }),
   );
 describe("Proxy seguro de Vercel", () => {
+  it("resuelve la ruta reescrita de Vercel y conserva parámetros sin reenviar la clave interna", async () => {
+    const rewritten = createServer(
+      createProxy({
+        upstream: upstreamUrl,
+        secret,
+        origin,
+        production: false,
+        rewritePath: true,
+      }),
+    );
+    const res = await request(rewritten).get(
+      "/api/index?__nexora_path=clients&q=nombre&page=2",
+    );
+    expect(res.status).toBe(200);
+    expect(res.body.url).toBe("/api/clients?q=nombre&page=2");
+    expect(
+      (
+        await request(
+          createServer(
+            createProxy({
+              upstream: upstreamUrl,
+              secret,
+              origin,
+              production: false,
+              rewritePath: true,
+            }),
+          ),
+        ).get("/api/index?__nexora_path=https://evil.example")
+      ).status,
+    ).toBe(400);
+  });
   it("mantiene cuerpo, query y cookies y sobrescribe encabezados manipulados", async () => {
     const res = await request(proxy())
       .post("/api/auth/login?q=hola")

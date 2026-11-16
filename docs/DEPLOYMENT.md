@@ -6,12 +6,12 @@ Estado actual: repositorio nuevo y preparación local. Aún no hay recursos Verc
 
 Solo nuevos recursos identificados como NEXORA. Conservar todos los proyectos, dominios, bases y variables existentes. Revisar el plan real de la cuenta antes de crear cada recurso. Si requiere tarjeta, facturación, suscripción o trial convertible, detener ese paso. No habilitar upgrades, autoscaling ni add-ons de pago.
 
-| Servicio | Objetivo sin coste                                                   | Límite y condición                                                   |
-| -------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| GitHub   | Repositorio público `cristoferdiazalvarez/nexora` y Actions estándar | No activar runners de pago ni LFS                                    |
-| Vercel   | Proyecto nuevo Hobby, raíz del monorepo                              | Confirmar elegibilidad y cuotas de la cuenta; no cambiar al plan Pro |
-| Render   | Un servicio web nuevo `free` con Node 24                             | Usa cuota compartida; suspensión por inactividad y arranque en frío  |
-| Atlas    | Proyecto nuevo, cluster Free/M0 y DB `nexora_production`             | Sin backups opcionales de pago ni upgrade de tier                    |
+| Servicio | Objetivo sin coste                                                   | Límite y condición                                                            |
+| -------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| GitHub   | Repositorio público `cristoferdiazalvarez/nexora` y Actions estándar | Runner Linux estándar en repositorio público; sin LFS ni subida de artefactos |
+| Vercel   | Proyecto nuevo Hobby, raíz del monorepo                              | Confirmar elegibilidad y cuotas de la cuenta; no cambiar al plan Pro          |
+| Render   | Un servicio web nuevo `free` con Node 24                             | Usa cuota compartida; suspensión por inactividad y arranque en frío           |
+| Atlas    | Proyecto nuevo, cluster Free/M0 y DB `nexora_production`             | Sin backups opcionales de pago ni upgrade de tier                             |
 
 La documentación de [Render Free](https://render.com/docs/free) explica suspensión tras 15 minutos y límites compartidos. Es adecuado para una demo de portfolio, no ofrece disponibilidad de un servicio comercial. No instalar pingers para eludir suspensión ni gastar cuotas de otros proyectos.
 
@@ -49,3 +49,5 @@ Los previews de Vercel no se autorizan con un comodín: producción acepta su or
 ## Bloqueos y alternativa
 
 Aún no hay sesiones autorizadas de Vercel, Render o Atlas disponibles en las herramientas/CLI comprobadas. Se ha solicitado conectar los tres servicios. No se pide copiar comandos ni pegar secretos en la conversación. Si un plan gratuito no está disponible en esas cuentas, detener la creación y explicar el motivo antes de elegir otra arquitectura gratuita. El código y la demo local permanecen utilizables mientras se resuelve ese acceso.
+
+La CI usa únicamente un [runner estándar gratuito para repositorios públicos](https://docs.github.com/en/billing/concepts/product-billing/github-actions), conserva el diagnóstico en logs y no sube trazas como artefactos que consuman almacenamiento facturable.

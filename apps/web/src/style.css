@@ -1024,3 +1024,23 @@ nav a.active {
     scroll-behavior: auto !important;
   }
 }
+html [data-sonner-toaster][data-sonner-theme="light"] {
+  --success-text: #176b43;
+  --error-text: #9f1239;
+  --warning-text: #854d0e;
+  --info-text: #1e40af;
+}
+html[data-theme="dark"] [data-sonner-toaster] {
+  --normal-bg: #252636;
+  --normal-text: #e2e1ec;
+  --normal-border: #414155;
+  --success-bg: #103526;
+  --success-border: #286047;
+  --success-text: #a0e7bf;
+  --error-bg: #3c1e2a;
+  --error-text: #ffb2c3;
+  --warning-bg: #372c19;
+  --warning-text: #f4d38e;
+  --info-bg: #202e4b;
+  --info-text: #b9ceff;
+}

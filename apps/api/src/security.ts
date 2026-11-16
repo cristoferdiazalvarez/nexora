@@ -53,7 +53,14 @@ export function clientKey(req: Request) {
   return ipKeyGenerator(ip || "127.0.0.1");
 }
 export function validateEnvironment(env: NodeJS.ProcessEnv) {
-  const origin = new URL(env.APP_ORIGIN || "");
+  const parse = (value: string, field: string) => {
+    try {
+      return new URL(value);
+    } catch {
+      throw new Error(`${field} no válida`);
+    }
+  };
+  const origin = parse(env.APP_ORIGIN || "", "APP_ORIGIN");
   if (origin.origin !== env.APP_ORIGIN || origin.username || origin.password)
     throw new Error(
       "APP_ORIGIN debe ser un origen exacto, sin ruta ni credenciales",
@@ -66,7 +73,7 @@ export function validateEnvironment(env: NodeJS.ProcessEnv) {
       throw new Error("Falta API_PROXY_SECRET seguro");
     if (
       !env.MONGODB_URI.startsWith("mongodb+srv://") ||
-      new URL(env.MONGODB_URI).pathname !== "/nexora_production"
+      parse(env.MONGODB_URI, "MONGODB_URI").pathname !== "/nexora_production"
     )
       throw new Error(
         "Producción requiere Atlas y base nexora_production separada",
