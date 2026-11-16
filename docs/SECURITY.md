@@ -6,7 +6,7 @@ El backend obtiene usuario y organización de la sesión, nunca del cuerpo. Toda
 
 En producción, Render valida el secreto del proxy con comparación de tiempo constante antes de confiar en la IP reenviada. La función Vercel toma `x-vercel-forwarded-for`, sustituye los encabezados internos y no transmite encabezados arbitrarios. No hay `trust proxy=true`. La función fija el upstream en una variable de servidor, rechaza rutas ambiguas y redirects, limita cuerpos, conserva cookies/PDF y devuelve errores genéricos. No es un proxy abierto. Solo el health check es público en Render.
 
-Vercel documenta que sus encabezados de IP son generados por la plataforma: [request headers](https://vercel.com/docs/headers/request-headers). La corrección en el proveedor sigue pendiente de la prueba de producción; las pruebas locales ejercitan el handler y la frontera Express.
+Vercel documenta que sus encabezados de IP son generados por la plataforma: [request headers](https://vercel.com/docs/headers/request-headers). La frontera se comprobó en producción: el proxy público permite los flujos autorizados y Render rechaza el acceso directo a /api/me con 403. Las dos suites E2E públicas verifican roles y aislamiento entre organizaciones. La cookie real Secure/HttpOnly/SameSite=Lax y su revocación se comprobaron en Chromium.
 
 ## Cookies, CSRF y CORS
 
@@ -41,4 +41,4 @@ Las variables privadas son `MONGODB_URI` y `API_PROXY_SECRET`. No deben incluirs
 
 ## Verificación
 
-Vitest/Supertest prueban autorización, aislamiento, validación, importes, cookies, caducidad, rate limiting, errores sanitizados y proxy. Playwright comprueba flujos HTTP y navegador, recarga y persistencia, login/logout y accesibilidad básica. Las verificaciones remotas siguen pendientes mientras no existan recursos autorizados. Véase STATUS.md.
+Vitest/Supertest prueban autorización, aislamiento, validación, importes, cookies, caducidad, rate limiting, errores sanitizados y proxy. Playwright comprueba flujos HTTP y navegador, recarga y persistencia, login/logout y accesibilidad básica. Las dos suites se ejecutaron también contra https://nexora-eta-steel.vercel.app y aprobaron. Se comprobaron además los atributos de la cookie real, su revocación, acceso directo bloqueado y ausencia de los secretos efectivos en los bundles publicados. Véase STATUS.md y docs/verification.json.

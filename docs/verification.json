@@ -1,65 +1,87 @@
 {
-  "checkedAt": "2026-11-16T12:36:24.936542+00:00",
-  "sourceCommit": "e7b34480f4a479e85a72f1e4878291d1e67b09f9",
+  "checkedAt": "2026-11-16T15:23:21.196620+00:00",
+  "sourceCommit": "8ff2f76e856132427075d7fd79a66de368a35f97",
   "ci": {
-    "url": "https://github.com/cristoferdiazalvarez/nexora/actions/runs/43867473883",
+    "url": "https://github.com/cristoferdiazalvarez/nexora/actions/runs/43890892205",
     "conclusion": "success",
     "unitAndIntegrationTests": 20,
     "e2eFlows": 2,
     "runtime": "Node 24, MongoDB, Chromium, Ubuntu standard GitHub runner"
   },
   "publicDemo": {
-    "url": null,
-    "productionTestsRun": false,
-    "blocker": "Vercel, Render y MongoDB Atlas sin conexión disponible en la última comprobación"
+    "url": "https://nexora-eta-steel.vercel.app",
+    "productionTestsRun": true,
+    "e2eFlowsPassed": 2,
+    "durationSeconds": 46.9,
+    "anonymousPublicAccess": true,
+    "apiHealthStatus": 200,
+    "directApiMeStatus": 403,
+    "cookie": {
+      "name": "__Host-nexora",
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax",
+      "revocationVerified": true
+    },
+    "staticAssetsChecked": 3,
+    "providerSecretsFoundInAssets": false,
+    "screenshotsManifest": "screenshots/production-manifest.json"
   },
   "portfolio": {
-    "checkedAt": "2026-11-16T12:24:43.361Z",
-    "readOnly": true,
-    "results": [
-      {
-        "url": "https://developer-portfolio-plum-mu.vercel.app",
-        "viewport": {
-          "width": 1440,
-          "height": 1000
-        },
-        "status": 200,
-        "h1": 1,
-        "noHorizontalOverflow": true
-      },
-      {
-        "url": "https://developer-portfolio-plum-mu.vercel.app",
-        "viewport": {
-          "width": 390,
-          "height": 844
-        },
-        "status": 200,
-        "h1": 1,
-        "noHorizontalOverflow": true
-      },
-      {
-        "url": "https://developer-portfolio-plum-mu.vercel.app/en",
-        "viewport": {
-          "width": 1440,
-          "height": 1000
-        },
-        "status": 200,
-        "h1": 1,
-        "noHorizontalOverflow": true
-      },
-      {
-        "url": "https://developer-portfolio-plum-mu.vercel.app/en",
-        "viewport": {
-          "width": 390,
-          "height": 844
-        },
-        "status": 200,
-        "h1": 1,
-        "noHorizontalOverflow": true
-      }
-    ],
-    "javascriptErrors": []
+    "url": "https://developer-portfolio-plum-mu.vercel.app",
+    "status": "published and verified",
+    "productionBrowserTestsPassed": 69,
+    "sourceCommit": "e985d469d7f81c7e4db1437bd2ccb31785eb34ea",
+    "deploymentId": "dpl_BJdyJKqsJmqDo8wQWUsBooF8DPCX",
+    "originalThreeProjectsPreserved": true,
+    "ci": "https://github.com/cristoferdiazalvarez/developer-portfolio/actions/runs/43894933259",
+    "ciConclusion": "success"
   },
   "paidResourcesCreated": false,
-  "billingActivated": false
+  "billingActivated": false,
+  "httpFinalChecks": {
+    "checkedAt": "2026-11-16T15:22:14.280320+00:00",
+    "results": [
+      {
+        "url": "https://nexora-eta-steel.vercel.app",
+        "status": 200,
+        "https": true,
+        "nexoraPresent": true
+      },
+      {
+        "url": "https://nexora-eta-steel.vercel.app/api/health",
+        "status": 200,
+        "https": true,
+        "nexoraPresent": false
+      },
+      {
+        "url": "https://nexora-api-y6u5.onrender.com/api/health",
+        "status": 200,
+        "https": true,
+        "nexoraPresent": false
+      },
+      {
+        "url": "https://nexora-api-y6u5.onrender.com/api/me",
+        "status": 403
+      },
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app",
+        "status": 200,
+        "https": true,
+        "nexoraPresent": true
+      },
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app/proyectos/nexora",
+        "status": 200,
+        "https": true,
+        "nexoraPresent": true
+      },
+      {
+        "url": "https://developer-portfolio-plum-mu.vercel.app/en/projects/nexora",
+        "status": 200,
+        "https": true,
+        "nexoraPresent": true
+      }
+    ]
+  }
 }

@@ -4,9 +4,9 @@
 
 Aplicación Full Stack de gestión empresarial con organizaciones independientes, clientes, catálogo y facturación. Proyecto de portfolio orientado a demostrar flujos completos, seguridad en backend y pruebas reproducibles.
 
-**Estado:** código publicado y [CI remota aprobada](https://github.com/cristoferdiazalvarez/nexora/actions/runs/43867473883) con 20 pruebas de unidad/integración y dos flujos E2E. Preparado para Vercel + Render + MongoDB Atlas. La demo pública todavía no está desplegada ni verificada. No hay ninguna URL de producción inventada. [Estado y resultados](STATUS.md) · [Despliegue](docs/DEPLOYMENT.md) · [Seguridad](docs/SECURITY.md).
+**Demo pública verificada:** https://nexora-eta-steel.vercel.app · [API health](https://nexora-api-y6u5.onrender.com/api/health). Dos flujos E2E aprobados contra producción; [CI aprobada](https://github.com/cristoferdiazalvarez/nexora/actions/runs/43890892205) con 20 pruebas de unidad/integración, lint, build y E2E. Vercel Hobby + Render Free + Atlas M0 independiente, sin facturación activada. [Estado](STATUS.md) · [Despliegue](docs/DEPLOYMENT.md) · [Seguridad](docs/SECURITY.md). Render Free puede necesitar un arranque en frío tras inactividad.
 
-![Dashboard de NEXORA con datos ficticios, capturado del build local](docs/screenshots/dashboard-light.png)
+![Dashboard real de producción de NEXORA con datos ficticios](docs/screenshots/production-dashboard.png)
 
 ## Qué permite hacer
 
@@ -129,6 +129,6 @@ Son imágenes reales del build local con información ficticia; no prueban un de
 
 ## Despliegue y límites
 
-[Plan exacto de publicación y variables](docs/DEPLOYMENT.md). Se requieren conexiones autorizadas a Vercel, Render y Atlas. GitHub es independiente del despliegue: una CI verde no significa que la aplicación esté publicada. No se modifica el portfolio hasta completar pruebas reales sobre la demo HTTPS.
+[Plan exacto de publicación y variables](docs/DEPLOYMENT.md). Despliegue completado mediante OAuth de las CLI oficiales. Las pruebas reales HTTPS aprobaron antes de preparar la actualización del portfolio. Los despliegues son explícitos; un push no sustituye la promoción ni la verificación pública.
 
 Este MVP es una demo de portfolio: no incluye recuperación de contraseña, verificación de correo, MFA, auditoría, eliminación de miembros, cobros online, conciliación, abonos ni certificación fiscal. La numeración de factura es única y aleatoria, no secuencial fiscal. Editar facturas toma datos actuales del cliente/emisor. El catálogo y las líneas de factura son independientes. El alta compensa errores de creación de usuario eliminando la organización; un cierre abrupto puede dejar una organización huérfana y aún no se usan transacciones. [Riesgos y medidas](docs/SECURITY.md).

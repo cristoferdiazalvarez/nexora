@@ -1,5 +1,23 @@
 # Estado de NEXORA — 16 de noviembre de 2026
 
+## Estado actual verificado — producción
+
+- **Aplicación pública:** https://nexora-eta-steel.vercel.app . Frontend y proxy HTTPS verificados sin autenticación de Vercel ni bypass.
+- **API:** https://nexora-api-y6u5.onrender.com/api/health devuelve 200 con MongoDB conectado; acceso directo a `/api/me` devuelve 403.
+- **Render Free:** nuevo `nexora-api`, `srv-dbthh9etlv9c73fd7f1g`, Frankfurt, Node 24, sin discos ni complementos. El usuario confirmó Hobby, ausencia de tarjeta y 750 horas restantes antes de la creación. No se ha activado facturación. La cuota es compartida y Render suspende por inactividad.
+- **Vercel Hobby:** proyecto exclusivo `nexora`, `prj_zXL4sOLxdNqp3FUYTd5TtCelQjTZ`; dominio público promovido tras build READY.
+- **Atlas M0:** proyecto independiente NEXORA `6afb12b6dd7784eb4af5e761`, cluster `nexora-production`, AWS EU_CENTRAL_1; base `nexora_production`, usuario limitado a readWrite en esa base y al cluster. Solo se autorizaron las salidas Render `74.220.51.0/24` y `74.220.59.0/24`, sin acceso global. Project 0 / Cluster0 intactos.
+- **Pruebas reales:** `E2E_BASE_URL=https://nexora-eta-steel.vercel.app npm run test:e2e`: **2 flujos aprobados, 46,9 s**. Registro/login/logout, persistencia, dashboard, CRUD, búsqueda, filtros, paginación, importes, PDF, roles, aislamiento de organizaciones, escritorio/móvil, consola y axe en claro/oscuro/móvil.
+- **Seguridad pública adicional:** cookie `__Host-nexora` Secure/HttpOnly/SameSite=Lax, no accesible desde JavaScript y revocada al cerrar sesión; CSP/HSTS/nosniff y API no-store. Los tres assets publicados no contienen el secreto real ni URI de MongoDB. Rutas de archivos privados devuelven el HTML de la SPA, no sus contenidos. Capturas reales con datos ficticios: `docs/screenshots/production-*` y manifiesto.
+- **Incidencia resuelta:** primer build Render falló porque NODE_ENV=production omitió TypeScript local. Corregido con `npm ci --include=dev` y rootDir explícito. Deploy `dep-dbthiulckfvc73et21jg` live, commit `8ff2f76e856132427075d7fd79a66de368a35f97`; [CI aprobada](https://github.com/cristoferdiazalvarez/nexora/actions/runs/43890892205): lint, 20 pruebas, build y 2 E2E.
+- Frontend desplegado desde `b1ee6a483a30cd90f11885c815491dfc0b8f0f71`; el cambio posterior afecta al build de API, documentación y capturas.
+- **Portfolio publicado y verificado:** https://developer-portfolio-plum-mu.vercel.app . NEXORA añadido en ES/EN después de probar la aplicación pública; **69 pruebas HTTPS aprobadas** en escritorio, tablet y móvil. Los tres proyectos anteriores conservados. Commit funcional `e985d469d7f81c7e4db1437bd2ccb31785eb34ea`, deploy `dpl_BJdyJKqsJmqDo8wQWUsBooF8DPCX`; [CI aprobada](https://github.com/cristoferdiazalvarez/developer-portfolio/actions/runs/43894933259).
+
+<details>
+<summary>Historial anterior (no representa el estado actual)</summary>
+
+# Estado de NEXORA — 16 de noviembre de 2026
+
 ## Avance verificado del despliegue (2026-11-16T14:40:08+00:00)
 
 - **Acceso resuelto:** autorizadas y verificadas las CLI oficiales de Vercel, Render y Atlas mediante OAuth de navegador. Las herramientas MCP de ChatGPT no se comparten con esta sesión; las CLI son el acceso efectivo. No se han mostrado ni solicitado tokens.
@@ -11,7 +29,6 @@
 - No se han activado suscripciones, tarjetas ni recursos de pago. La app pública, los secretos de producción, sus pruebas y la tarjeta de portfolio continúan pendientes de completar la API.
 
 ## Historial anterior a la autorización CLI
-
 
 ## Preparación completada y comprobada localmente
 
@@ -47,3 +64,5 @@
 [Plan de despliegue](docs/DEPLOYMENT.md) · [Auditoría y límites](docs/SECURITY.md) · [Arranque](README.md).
 
 La verificación remota de GitHub Actions usa Node 24, MongoDB y Chromium en un runner Linux estándar. **CI aprobada no equivale a despliegue en producción.** La documentación posterior no cambia el código probado. Servidores locales de verificación cerrados al finalizar; los datos demo quedan conservados.
+
+</details>
