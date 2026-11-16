@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-11-16T15:03:16.807Z",
+  "baseURL": "https://nexora-eta-steel.vercel.app",
+  "fictionalDataOnly": true,
+  "cookie": {
+    "name": "__Host-nexora",
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax",
+    "readableByJavascript": false
+  },
+  "logoutRevoked": true,
+  "assets": [
+    {
+      "file": "docs/screenshots/production-dashboard.png",
+      "sha256": "9674cf7176da4ff82eef4ca3eee9076fca8f63bca16e782e64a7f84d8ddec0c8",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "file": "docs/screenshots/production-invoices.png",
+      "sha256": "65d287671992624d4795414f58d1abf15b8546deaf1dafb20ec455dc287af3b5",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "file": "docs/screenshots/production-mobile.png",
+      "sha256": "420a9931bbb8c1d8e95db489f623af784b8aaaa1c849b7ecf1a70fbb6d2a7a70",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ]
+}
